@@ -20,6 +20,15 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
+<!-- AOS Library -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,
+    once: true
+  });
+</script>
 
 
   <style>
@@ -368,6 +377,51 @@
   opacity: 1;
   background: #924d7e;
 }
+#skills {
+  padding: 60px 20px;
+  background: #f9f9f9;
+}
+
+.skills-category {
+  margin-bottom: 40px;
+}
+
+.skills-category h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #444;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.skills-grid span {
+  background: #fff;
+  padding: 10px 14px;
+  border-radius: 10px;
+  color: #333;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+  cursor: pointer;
+}
+
+.skills-grid span:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  background: #f2f0ff;
+}
+
+.skills-grid i {
+  font-size: 18px;
+}
+
 
   </style>
 </head>
@@ -481,43 +535,45 @@
 
 
 <!-- Skills Section -->
+<!-- Skills Section -->
 <section id="skills" data-aos="fade-up">
-  <h2 style="text-align: center;">Skills</h2>
-  <div class="skills-category">
+  <h2 style="text-align:center; margin-bottom:40px;" data-aos="fade-down" data-aos-delay="50">Skills</h2>
+  
+  <div class="skills-category" data-aos="fade-up" data-aos-delay="100">
     <h3>Programming Languages</h3>
     <div class="skills-grid">
-      <span><i class="fas fa-code"></i> C</span>
-      <span><i class="fab fa-python"></i> Python</span>
-      <span><i class="fab fa-r-project"></i> R</span>
+      <span data-aos="zoom-in"><i class="fas fa-code"></i> C</span>
+      <span data-aos="zoom-in" data-aos-delay="100"><i class="fab fa-python"></i> Python</span>
+      <span data-aos="zoom-in" data-aos-delay="200"><i class="fab fa-r-project"></i> R</span>
     </div>
+  </div>
 
-    <h3>Web & Tools</h3>
+  <div class="skills-category" data-aos="fade-up" data-aos-delay="200">
+    <h3>Web Development & Tools</h3>
     <div class="skills-grid">
-      <span><i class="fab fa-html5"></i> HTML</span>
-      <span><i class="fab fa-css3-alt"></i> CSS</span>
-      <span><i class="fab fa-js"></i> JavaScript</span>
-      <span><i class="fab fa-react"></i> React</span>
-      <span><i class="fab fa-node"></i> Node.js</span>
-      <span><i class="fas fa-fire"></i> Firebase</span>
-      <span><i class="fab fa-git-alt"></i> Git</span>
-      <span><i class="fab fa-github"></i> GitHub</span>
-      <span><i class="fas fa-database"></i> SQL/MongoDB</span>
-      <span><i class="fab fa-docker"></i> Docker</span>
+      <span data-aos="zoom-in"><i class="fab fa-html5"></i> HTML</span>
+      <span data-aos="zoom-in" data-aos-delay="100"><i class="fab fa-css3-alt"></i> CSS</span>
+      <span data-aos="zoom-in" data-aos-delay="200"><i class="fab fa-js-square"></i> JavaScript</span>
+      <span data-aos="zoom-in" data-aos-delay="300"><i class="fab fa-react"></i> React</span>
+      <span data-aos="zoom-in" data-aos-delay="400"><i class="fab fa-node-js"></i> Node.js</span>
     </div>
+  </div>
 
+  <div class="skills-category" data-aos="fade-up" data-aos-delay="300">
     <h3>AI & Data</h3>
     <div class="skills-grid">
-      <span><i class="fas fa-brain"></i> Data Science</span>
-      <span><i class="fas fa-microchip"></i> AI</span>
-      <span><i class="fas fa-plug"></i> API Integration</span>
-      <span><i class="fas fa-vial"></i> Flask</span>
+      <span data-aos="zoom-in"><i class="fas fa-brain"></i> Machine Learning</span>
+      <span data-aos="zoom-in" data-aos-delay="100"><i class="fas fa-database"></i> MySQL</span>
+      <span data-aos="zoom-in" data-aos-delay="200"><i class="fas fa-chart-line"></i> Data Analysis</span>
+      <span data-aos="zoom-in" data-aos-delay="300"><i class="fas fa-robot"></i> Generative AI</span>
     </div>
+  </div>
 
+  <div class="skills-category" data-aos="fade-up" data-aos-delay="400">
     <h3>Operating Systems</h3>
     <div class="skills-grid">
-      <span><i class="fab fa-apple"></i> macOS</span>
-      <span><i class="fab fa-windows"></i> Windows</span>
-      <span><i class="fab fa-linux"></i> Linux</span>
+      <span data-aos="zoom-in"><i class="fab fa-windows"></i> Windows</span>
+      <span data-aos="zoom-in" data-aos-delay="100"><i class="fab fa-linux"></i> Linux</span>
     </div>
   </div>
 </section>

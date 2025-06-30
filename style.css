@@ -156,7 +156,7 @@ form button:hover {
 footer {
   text-align: center;
   padding: 20px;
-  background-color: #333;
+  background: linear-gradient(135deg, #d172b1, #dc1f8a);
   color: white;
   margin-top: 50px;
 }

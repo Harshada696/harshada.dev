@@ -61,7 +61,7 @@ nav a {
 }
 
 nav a:hover {
-  color: #6b73ff;
+  color: #d20c76;
 }
 
 /* Section Styles */
@@ -139,7 +139,7 @@ form textarea {
 
 form button {
   padding: 12px;
-  background-color: #6b73ff;
+  background-color: #cc0f61;
   color: white;
   border: none;
   border-radius: 8px;

@@ -74,7 +74,7 @@ section {
 section h2 {
   font-size: 2rem;
   margin-bottom: 20px;
-  color: #000dff;
+  color: linear-gradient(135deg, #a16bff, #9024a8);
   border-bottom: 2px solid #ccc;
   padding-bottom: 5px;
 }
@@ -149,7 +149,24 @@ form button {
 }
 
 form button:hover {
-  background-color: #4c53d3;
+  background-color: #d34cb1;
+}
+
+/* Download Resume Button */
+.download-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 20px;
+  background: linear-gradient(135deg, #d172b1, #dc1f8a);
+  color: white;
+  text-decoration: none;
+  font-weight: 600;
+  border-radius: 8px;
+  transition: background 0.3s ease;
+}
+
+.download-btn:hover {
+  background-color: #6b73ff;
 }
 
 /* Footer */

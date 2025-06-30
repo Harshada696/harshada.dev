@@ -17,6 +17,19 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<!-- AOS Library -->
+<link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
+<script>
+  AOS.init({
+    duration: 800,
+    once: true
+  });
+</script>
 
 
   <style>
@@ -321,6 +334,209 @@
   transform: translateY(-3px);
   box-shadow: 0 6px 12px rgba(0,0,0,0.15);
 }
+.swiper-container {
+  width: 100%;
+  padding: 40px 0;
+}
+
+.swiper-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.swiper-slide:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+.project-icon {
+  font-size: 2.5rem;
+  color: #a18cd1;
+  margin-bottom: 15px;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+.swiper-slide:hover .project-icon {
+  color: #924d7e;
+  text-shadow: 0 0 5px #a18cd1, 0 0 10px #a18cd1;
+}
+
+/* Navigation arrows */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #924d7e;
+}
+.swiper-pagination-bullet {
+  background: #a18cd1;
+  opacity: 0.6;
+}
+.swiper-pagination-bullet-active {
+  opacity: 1;
+  background: #924d7e;
+}
+#skills {
+  padding: 60px 20px;
+  background: #f9f9f9;
+}
+
+.skills-category {
+  margin-bottom: 40px;
+}
+
+.skills-category h3 {
+  font-size: 20px;
+  margin-bottom: 15px;
+  color: #444;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.skills-grid span {
+  background: #fff;
+  padding: 10px 14px;
+  border-radius: 10px;
+  color: #333;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s, background 0.3s;
+  cursor: pointer;
+}
+
+.skills-grid span:hover {
+  transform: translateY(-5px) scale(1.05);
+  box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+  background: #f2f0ff;
+}
+
+.skills-grid i {
+  font-size: 18px;
+}
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 500px;
+  margin: 0 auto;
+  animation: slideInUp 1s ease-in-out;
+}
+
+.contact-form input,
+.contact-form textarea {
+  padding: 14px;
+  font-size: 1rem;
+  border-radius: 10px;
+  border: 2px solid #a18cd1;
+  background-color: #fff;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 0 transparent;
+  outline: none;
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  border-color: #924d7e;
+  box-shadow: 0 0 12px #dca1ff, 0 0 24px #fbc2eb;
+}
+
+.contact-form input:hover,
+.contact-form textarea:hover {
+  background-color: #f9f5ff;
+}
+
+.contact-form textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.contact-form button {
+  background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: bold;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.contact-form button:hover {
+  background: linear-gradient(135deg, #924d7e, #e07be0);
+  transform: scale(1.03);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Slide in animation */
+@keyframes slideInUp {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0px);
+    opacity: 1;
+  }
+}
+
+.download-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+  color: white;
+  padding: 14px 26px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 6px 20px rgba(161, 140, 209, 0.4);
+  margin-top: 30px;
+  animation: fadeInUp 1s ease-in-out 0.5s backwards;
+}
+
+.download-btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #9b59b6, #ffb6c1);
+  box-shadow: 0 10px 25px rgba(255, 182, 193, 0.4);
+}
+
+.download-btn i {
+  font-size: 1.3rem;
+  transition: transform 0.3s ease;
+}
+
+.download-btn:active i {
+  transform: scale(1.3) rotate(10deg);
+}
+
+/* Entrance animation */
+@keyframes fadeInUp {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
 
   </style>
 </head>
@@ -381,119 +597,123 @@
 
 
  <!-- Projects Section -->
+
 <section id="projects" data-aos="fade-up">
-  <h2 style="text-align: center; margin-bottom: 40px;">Projects</h2>
-  <div class="project-grid">
+  <h2 style="text-align:center; margin-bottom:40px;">Projects</h2>
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
 
-    <div class="project-card" data-aos="zoom-in">
-      <i class="fab fa-youtube project-icon"></i>
-      <h3>YouTube AI Clone</h3>
-      <p>React, Node.js, MongoDB, AI APIs</p>
+      <div class="swiper-slide project-card">
+        <i class="fab fa-youtube project-icon"></i>
+        <h3>YouTube AI Clone</h3>
+        <p>React · Node.js · MongoDB · AI APIs</p>
+      </div>
+
+      <div class="swiper-slide project-card">
+        <i class="fas fa-graduation-cap project-icon"></i>
+        <h3>SmartEducationHub</h3>
+        <p>Node.js · MySQL · HTML/CSS/JS</p>
+      </div>
+
+      <div class="swiper-slide project-card">
+        <i class="fas fa-map-marked-alt project-icon"></i>
+        <h3>Travel Management System</h3>
+        <p>Firebase · Java (Servlets)</p>
+      </div>
+
+      <div class="swiper-slide project-card">
+        <i class="fas fa-apple-alt project-icon"></i>
+        <h3>Fruit Disease Detection</h3>
+        <p>Python · Flask · CNN</p>
+      </div>
+
+      <div class="swiper-slide project-card">
+        <i class="fas fa-globe project-icon"></i>
+        <h3>Renuka Foods Website</h3>
+        <p>PHP · MySQL</p>
+      </div>
+
+      <div class="swiper-slide project-card">
+        <i class="fas fa-robot project-icon"></i>
+        <h3>Automatic Floor Cleaner Robot</h3>
+        <p>Arduino · Embedded Systems</p>
+      </div>
+
     </div>
 
-    <div class="project-card" data-aos="zoom-in" data-aos-delay="100">
-      <i class="fas fa-graduation-cap project-icon"></i>
-      <h3>SmartEducationHub</h3>
-      <p>Node.js, MySQL, HTML/CSS/JS</p>
-    </div>
-
-    <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
-      <i class="fas fa-map-marked-alt project-icon"></i>
-      <h3>Travel Management System</h3>
-      <p>Firebase, Java (Servlets)</p>
-    </div>
-
-    <div class="project-card" data-aos="zoom-in" data-aos-delay="300">
-      <i class="fas fa-apple-alt project-icon"></i>
-      <h3>Fruit Disease Detection</h3>
-      <p>Python, Flask, CNN</p>
-    </div>
-
-    <div class="project-card" data-aos="zoom-in" data-aos-delay="400">
-      <i class="fas fa-globe project-icon"></i>
-      <h3>Renuka Foods Website</h3>
-      <p>PHP, MySQL</p>
-    </div>
-
-    <div class="project-card" data-aos="zoom-in" data-aos-delay="500">
-      <i class="fas fa-robot project-icon"></i>
-      <h3>Automatic Floor Cleaner Robot</h3>
-      <p>Arduino, Embedded Systems</p>
-    </div>
-
+    <!-- Swiper Controls -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-pagination"></div>
   </div>
 </section>
 
+
+<!-- Skills Section -->
 <!-- Skills Section -->
 <section id="skills" data-aos="fade-up">
-  <h2 style="text-align: center;">Skills</h2>
-  <div class="skills-category">
+  <h2 style="text-align:center; margin-bottom:40px;" data-aos="fade-down" data-aos-delay="50">Skills</h2>
+  
+  <div class="skills-category" data-aos="fade-up" data-aos-delay="100">
     <h3>Programming Languages</h3>
     <div class="skills-grid">
-      <span><i class="fas fa-code"></i> C</span>
-      <span><i class="fab fa-python"></i> Python</span>
-      <span><i class="fab fa-r-project"></i> R</span>
+      <span data-aos="zoom-in"><i class="fas fa-code"></i> C</span>
+      <span data-aos="zoom-in" data-aos-delay="100"><i class="fab fa-python"></i> Python</span>
+      <span data-aos="zoom-in" data-aos-delay="200"><i class="fab fa-r-project"></i> R</span>
     </div>
+  </div>
 
-    <h3>Web & Tools</h3>
+  <div class="skills-category" data-aos="fade-up" data-aos-delay="200">
+    <h3>Web Development & Tools</h3>
     <div class="skills-grid">
-      <span><i class="fab fa-html5"></i> HTML</span>
-      <span><i class="fab fa-css3-alt"></i> CSS</span>
-      <span><i class="fab fa-js"></i> JavaScript</span>
-      <span><i class="fab fa-react"></i> React</span>
-      <span><i class="fab fa-node"></i> Node.js</span>
-      <span><i class="fas fa-fire"></i> Firebase</span>
-      <span><i class="fab fa-git-alt"></i> Git</span>
-      <span><i class="fab fa-github"></i> GitHub</span>
-      <span><i class="fas fa-database"></i> SQL/MongoDB</span>
-      <span><i class="fab fa-docker"></i> Docker</span>
+      <span data-aos="zoom-in"><i class="fab fa-html5"></i> HTML</span>
+      <span data-aos="zoom-in" data-aos-delay="100"><i class="fab fa-css3-alt"></i> CSS</span>
+      <span data-aos="zoom-in" data-aos-delay="200"><i class="fab fa-js-square"></i> JavaScript</span>
+      <span data-aos="zoom-in" data-aos-delay="300"><i class="fab fa-react"></i> React</span>
+      <span data-aos="zoom-in" data-aos-delay="400"><i class="fab fa-node-js"></i> Node.js</span>
     </div>
+  </div>
 
+  <div class="skills-category" data-aos="fade-up" data-aos-delay="300">
     <h3>AI & Data</h3>
     <div class="skills-grid">
-      <span><i class="fas fa-brain"></i> Data Science</span>
-      <span><i class="fas fa-microchip"></i> AI</span>
-      <span><i class="fas fa-plug"></i> API Integration</span>
-      <span><i class="fas fa-vial"></i> Flask</span>
+      <span data-aos="zoom-in"><i class="fas fa-brain"></i> Machine Learning</span>
+      <span data-aos="zoom-in" data-aos-delay="100"><i class="fas fa-database"></i> MySQL</span>
+      <span data-aos="zoom-in" data-aos-delay="200"><i class="fas fa-chart-line"></i> Data Analysis</span>
+      <span data-aos="zoom-in" data-aos-delay="300"><i class="fas fa-robot"></i> Generative AI</span>
     </div>
+  </div>
 
+  <div class="skills-category" data-aos="fade-up" data-aos-delay="400">
     <h3>Operating Systems</h3>
     <div class="skills-grid">
-      <span><i class="fab fa-apple"></i> macOS</span>
-      <span><i class="fab fa-windows"></i> Windows</span>
-      <span><i class="fab fa-linux"></i> Linux</span>
+      <span data-aos="zoom-in"><i class="fab fa-windows"></i> Windows</span>
+      <span data-aos="zoom-in" data-aos-delay="100"><i class="fab fa-linux"></i> Linux</span>
     </div>
   </div>
 </section>
 
 
   <section id="contact" data-aos="fade-up">
-    <h2>Contact Me</h2>
-    <form id="contactForm">
-      <input type="text" id="name" placeholder="Your Name" required />
-      <input type="email" id="email" placeholder="Your Email" required />
-      <textarea id="message" placeholder="Your Message" required></textarea>
-      <button type="submit">Send</button>
-    </form>
-    <p id="response"></p>
-    <a href="Harshada_Resume_Latest.pdf" download class="download-btn">Download My Resume</a>
-  </section>
+  <h2 style="text-align:center; font-size:2.2rem; margin-bottom: 30px;">Let's Connect ✨</h2>
+  
+  <form id="contactForm" class="contact-form">
+    <input type="text" id="name" placeholder="Your Name" required />
+    <input type="email" id="email" placeholder="Your Email" required />
+    <textarea id="message" placeholder="Your Message" required></textarea>
+    <button type="submit">Send Message 🚀</button>
+  </form>
+  
+  <p id="response" style="text-align:center; font-weight:bold; margin-top: 15px;"></p>
+<center><a href="Harshada_Resume_Latest.pdf" 
+   download 
+   class="download-btn"
+   id="resumeBtn">
+  <i class="fas fa-file-download"></i> Download My Resume
+</a></center>
 
-  <section id="blog">
-    <h2>Blog</h2>
-    <div class="blog-posts">
-      <article class="post">
-        <h3>How I Built My AI YouTube Clone 🎥</h3>
-        <p>Learn how I integrated AI APIs with React and MongoDB...</p>
-        <a href="#" class="read-more">Read More</a>
-      </article>
-      <article class="post">
-        <h3>Firebase vs AWS: What to Choose? ☁️</h3>
-        <p>A practical comparison based on real projects I’ve built.</p>
-        <a href="#" class="read-more">Read More</a>
-      </article>
-    </div>
-  </section>
+</section>
+
 
   <footer>
     <p>Built with ❤️ by Harshada Mundwadkar</p>
@@ -521,6 +741,35 @@
     }
   }
 </script>
+<script>
+  const resumeBtn = document.getElementById('resumeBtn');
+  resumeBtn.addEventListener('click', () => {
+    resumeBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Preparing...';
+    setTimeout(() => {
+      resumeBtn.innerHTML = '<i class="fas fa-file-download"></i> Download My Resume';
+    }, 1800);
+  });
+</script>
+
+<script>
+  const swiper = new Swiper('.swiper-container', {
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 20,
+    centeredSlides: true,
+    grabCursor: true,
+    pagination: { el: '.swiper-pagination', clickable: true },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+    },
+  });
+</script>
+
 
 
   <!-- Tawk.to Live Chat -->

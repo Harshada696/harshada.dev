@@ -3,6 +3,15 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Portfolio of Harshada Mundwadkar – Full Stack Developer, Machine Learning Enthusiast and Cloud Practitioner.">
+<meta name="keywords" content="Harshada Mundwadkar, Full Stack Developer, React, Node.js, Machine Learning, Portfolio, Firebase, AI Projects, Developer India">
+<meta name="author" content="Harshada Mundwadkar">
+<meta property="og:title" content="Harshada Mundwadkar | Portfolio">
+<meta property="og:description" content="Explore Harshada's projects, skills, and blog in full-stack development, ML, and cloud.">
+<meta property="og:type" content="website">
+<meta property="og:image" content="harshada.jpg"> <!-- adjust path if needed -->
+<meta property="og:url" content="https://your-portfolio-url.com"> <!-- update with your actual domain -->
+
   <title>Harshada Mundwadkar | Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
@@ -31,6 +40,43 @@
       background: var(--dark-bg);
       color: var(--dark-text);
     }
+#blog {
+  padding: 60px 20px;
+  background: #fdf9ff;
+}
+
+#blog h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 40px;
+}
+
+.blog-posts {
+  display: grid;
+  gap: 30px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.post {
+  background: linear-gradient(135deg, #e0c3fc, #8ec5fc);
+  padding: 20px;
+  border-radius: 12px;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.05);
+  transition: transform 0.3s ease;
+}
+
+.post:hover {
+  transform: translateY(-5px);
+}
+
+.read-more {
+  display: inline-block;
+  margin-top: 10px;
+  color: #512da8;
+  font-weight: bold;
+  text-decoration: underline;
+}
 
     .login-btn, .toggle-mode {
       position: fixed;
@@ -248,6 +294,21 @@
     <p id="response"></p>
     <a href="Harshada_Resume_Latest.pdf" download class="download-btn">Download My Resume</a>
   </section>
+<section id="blog">
+  <h2>Blog</h2>
+  <div class="blog-posts">
+    <article class="post">
+      <h3>How I Built My AI YouTube Clone 🎥</h3>
+      <p>Learn how I integrated AI APIs with React and MongoDB...</p>
+      <a href="#" class="read-more">Read More</a>
+    </article>
+    <article class="post">
+      <h3>Firebase vs AWS: What to Choose? ☁️</h3>
+      <p>A practical comparison based on real projects I’ve built.</p>
+      <a href="#" class="read-more">Read More</a>
+    </article>
+  </div>
+</section>
 
   <footer>
     <p>Built with ❤️ by Harshada Mundwadkar</p>
@@ -261,5 +322,20 @@
       document.body.classList.toggle("dark-mode");
     }
   </script>
+  <!-- Tawk.to Live Chat -->
+<script type="text/javascript">
+var Tawk_API = Tawk_API || {}, Tawk_LoadStart = new Date();
+(function(){
+  var s1 = document.createElement("script"), s0 = document.getElementsByTagName("script")[0];
+  s1.async = true;
+  s1.src = 'https://embed.tawk.to/6862e94b4e7b95190e74aa3b/1iv15ukh8';
+  s1.charset = 'UTF-8';
+  s1.setAttribute('crossorigin','*');
+  s0.parentNode.insertBefore(s1, s0);
+})();
+</script>
+<!--End of Tawk.to Script-->
+
+
 </body>
 </html>

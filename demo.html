@@ -19,6 +19,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
 <!-- AOS Library -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
@@ -489,6 +490,52 @@
   }
 }
 
+.download-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+  color: white;
+  padding: 14px 26px;
+  font-size: 1.1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 50px;
+  text-decoration: none;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  box-shadow: 0 6px 20px rgba(161, 140, 209, 0.4);
+  margin-top: 30px;
+  animation: fadeInUp 1s ease-in-out 0.5s backwards;
+}
+
+.download-btn:hover {
+  transform: scale(1.05);
+  background: linear-gradient(135deg, #9b59b6, #ffb6c1);
+  box-shadow: 0 10px 25px rgba(255, 182, 193, 0.4);
+}
+
+.download-btn i {
+  font-size: 1.3rem;
+  transition: transform 0.3s ease;
+}
+
+.download-btn:active i {
+  transform: scale(1.3) rotate(10deg);
+}
+
+/* Entrance animation */
+@keyframes fadeInUp {
+  from {
+    transform: translateY(40px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
 
 
   </style>
@@ -658,7 +705,13 @@
   </form>
   
   <p id="response" style="text-align:center; font-weight:bold; margin-top: 15px;"></p>
-  <a href="Harshada_Resume_Latest.pdf" download class="download-btn">Download My Resume</a>
+<center><a href="Harshada_Resume_Latest.pdf" 
+   download 
+   class="download-btn"
+   id="resumeBtn">
+  <i class="fas fa-file-download"></i> Download My Resume
+</a></center>
+
 </section>
 
 
@@ -688,6 +741,16 @@
     }
   }
 </script>
+<script>
+  const resumeBtn = document.getElementById('resumeBtn');
+  resumeBtn.addEventListener('click', () => {
+    resumeBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Preparing...';
+    setTimeout(() => {
+      resumeBtn.innerHTML = '<i class="fas fa-file-download"></i> Download My Resume';
+    }, 1800);
+  });
+</script>
+
 <script>
   const swiper = new Swiper('.swiper-container', {
     loop: true,

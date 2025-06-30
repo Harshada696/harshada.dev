@@ -16,6 +16,11 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+
 
   <style>
     :root {
@@ -248,6 +253,122 @@
       font-weight: bold;
       text-decoration: underline;
     }
+    .project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  justify-items: center;
+  margin-top: 20px;
+}
+
+.project-card {
+  background: #fff;
+  color: #333;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 300px;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.project-icon {
+  font-size: 40px;
+  margin-bottom: 15px;
+  color: #a18cd1;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+.project-card:hover .project-icon {
+  color: #924d7e;
+  text-shadow: 0 0 5px #a18cd1, 0 0 10px #a18cd1;
+}
+
+.skills-category {
+  margin-top: 30px;
+}
+
+.skills-category h3 {
+  margin-top: 30px;
+  font-size: 1.3rem;
+  color: #444;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.skills-grid span {
+  background: #fff;
+  padding: 10px 14px;
+  border-radius: 10px;
+  color: #333;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.skills-grid span:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+.swiper-container {
+  width: 100%;
+  padding: 40px 0;
+}
+
+.swiper-slide {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  border-radius: 15px;
+  padding: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.swiper-slide:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+.project-icon {
+  font-size: 2.5rem;
+  color: #a18cd1;
+  margin-bottom: 15px;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+.swiper-slide:hover .project-icon {
+  color: #924d7e;
+  text-shadow: 0 0 5px #a18cd1, 0 0 10px #a18cd1;
+}
+
+/* Navigation arrows */
+.swiper-button-next,
+.swiper-button-prev {
+  color: #924d7e;
+}
+.swiper-pagination-bullet {
+  background: #a18cd1;
+  opacity: 0.6;
+}
+.swiper-pagination-bullet-active {
+  opacity: 1;
+  background: #924d7e;
+}
+
   </style>
 </head>
 <body>
@@ -264,7 +385,19 @@
 
   <header class="hero" data-aos="fade-up">
     <img src="harshada.jpg" alt="Harshada" class="profile-img">
-    <h1>Harshada Mundwadkar</h1>
+<h1 style="
+  font-family: 'Great Vibes', cursive;
+  color: var(--light-color);
+  text-shadow: 0 0 5px var(--primary-color), 0 0 10px var(--primary-color), 0 0 20px var(--primary-color);
+  font-size: 3rem;
+  margin-top: 40px;
+">
+  Harshada Mundwadkar
+</h1>
+
+
+
+
     <p>Full Stack Developer | ML Enthusiast | Firebase & Cloud Practitioner</p>
   </header>
 
@@ -275,35 +408,120 @@
     <a href="#contact">Contact</a>
   </nav>
 
-  <section id="about" data-aos="fade-up">
-    <h2>About Me</h2>
-    <p>Computer Science student with hands-on experience in full-stack development, machine learning, and cloud. I love building efficient solutions and collaborating with like-minded people.</p>
-  </section>
+<section id="about" data-aos="fade-up">
+  <h2>About Me</h2>
+  <p style="text-align: justify; font-size: 1.05rem;">
+    I’m <strong>Harshada Mundwadkar</strong>, a passionate Computer Science student with a knack for building scalable full-stack applications and solving real-world problems using AI and cloud technologies. My development journey blends creativity with logic – whether I’m working with <strong>React, Node.js, or Firebase</strong>, or designing ML models in <strong>Python</strong>.
+  </p>
 
-  <section id="projects" data-aos="fade-up">
-    <h2>Projects</h2>
-    <ul>
-      <li><strong>YouTube AI Clone:</strong> React, Node.js, MongoDB, AI APIs</li>
-      <li><strong>SmartEducationHub:</strong> Node.js, MySQL, HTML/CSS/JS</li>
-      <li><strong>Travel Management System:</strong> Firebase, Java (Servlets)</li>
-      <li><strong>Fruit Disease Detection:</strong> Python, Flask, CNN</li>
-      <li><strong>Renuka Foods Website:</strong> PHP, MySQL</li>
-      <li><strong>Automatic Floor Cleaner Robot:</strong> Arduino</li>
-    </ul>
-  </section>
+  <div id="more-about" style="display: none;">
+    <p style="text-align: justify; font-size: 1.05rem;">
+      I've worked on a variety of hands-on projects ranging from <em>AI-powered apps</em> to <em>automated robotics</em>, reflecting a strong foundation in both software and embedded systems. I enjoy collaborating on open-source initiatives, diving deep into <strong>cloud platforms like AWS</strong>, and crafting elegant, responsive UI/UX experiences.
+      <br><br>
+      Beyond coding, I find joy in public speaking, mentoring peers, and staying updated with the latest tech trends. My goal is to blend technology with purpose — creating tools that empower people and communities.
+    </p>
+  </div>
 
-  <section id="skills" data-aos="fade-up">
-    <h2>Skills</h2>
-    <div class="skills-grid">
-      <span>HTML/CSS/JS</span>
-      <span>React & Node.js</span>
-      <span>Python, Java</span>
-      <span>SQL, MongoDB</span>
-      <span>Firebase, AWS</span>
-      <span>Docker, GitHub</span>
-      <span>Power BI, Figma</span>
+  <a id="toggle-about" onclick="toggleAbout()" style="color: #924d7e; cursor: pointer; font-weight: bold; display: inline-block; margin-top: 10px;">Read more</a>
+</section>
+
+
+
+ <!-- Projects Section -->
+
+<section id="projects" data-aos="fade-up">
+  <h2 style="text-align:center; margin-bottom:40px;">Projects</h2>
+  <div class="swiper-container">
+    <div class="swiper-wrapper">
+
+      <div class="swiper-slide project-card">
+        <i class="fab fa-youtube project-icon"></i>
+        <h3>YouTube AI Clone</h3>
+        <p>React · Node.js · MongoDB · AI APIs</p>
+      </div>
+
+      <div class="swiper-slide project-card">
+        <i class="fas fa-graduation-cap project-icon"></i>
+        <h3>SmartEducationHub</h3>
+        <p>Node.js · MySQL · HTML/CSS/JS</p>
+      </div>
+
+      <div class="swiper-slide project-card">
+        <i class="fas fa-map-marked-alt project-icon"></i>
+        <h3>Travel Management System</h3>
+        <p>Firebase · Java (Servlets)</p>
+      </div>
+
+      <div class="swiper-slide project-card">
+        <i class="fas fa-apple-alt project-icon"></i>
+        <h3>Fruit Disease Detection</h3>
+        <p>Python · Flask · CNN</p>
+      </div>
+
+      <div class="swiper-slide project-card">
+        <i class="fas fa-globe project-icon"></i>
+        <h3>Renuka Foods Website</h3>
+        <p>PHP · MySQL</p>
+      </div>
+
+      <div class="swiper-slide project-card">
+        <i class="fas fa-robot project-icon"></i>
+        <h3>Automatic Floor Cleaner Robot</h3>
+        <p>Arduino · Embedded Systems</p>
+      </div>
+
     </div>
-  </section>
+
+    <!-- Swiper Controls -->
+    <div class="swiper-button-prev"></div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-pagination"></div>
+  </div>
+</section>
+
+
+<!-- Skills Section -->
+<section id="skills" data-aos="fade-up">
+  <h2 style="text-align: center;">Skills</h2>
+  <div class="skills-category">
+    <h3>Programming Languages</h3>
+    <div class="skills-grid">
+      <span><i class="fas fa-code"></i> C</span>
+      <span><i class="fab fa-python"></i> Python</span>
+      <span><i class="fab fa-r-project"></i> R</span>
+    </div>
+
+    <h3>Web & Tools</h3>
+    <div class="skills-grid">
+      <span><i class="fab fa-html5"></i> HTML</span>
+      <span><i class="fab fa-css3-alt"></i> CSS</span>
+      <span><i class="fab fa-js"></i> JavaScript</span>
+      <span><i class="fab fa-react"></i> React</span>
+      <span><i class="fab fa-node"></i> Node.js</span>
+      <span><i class="fas fa-fire"></i> Firebase</span>
+      <span><i class="fab fa-git-alt"></i> Git</span>
+      <span><i class="fab fa-github"></i> GitHub</span>
+      <span><i class="fas fa-database"></i> SQL/MongoDB</span>
+      <span><i class="fab fa-docker"></i> Docker</span>
+    </div>
+
+    <h3>AI & Data</h3>
+    <div class="skills-grid">
+      <span><i class="fas fa-brain"></i> Data Science</span>
+      <span><i class="fas fa-microchip"></i> AI</span>
+      <span><i class="fas fa-plug"></i> API Integration</span>
+      <span><i class="fas fa-vial"></i> Flask</span>
+    </div>
+
+    <h3>Operating Systems</h3>
+    <div class="skills-grid">
+      <span><i class="fab fa-apple"></i> macOS</span>
+      <span><i class="fab fa-windows"></i> Windows</span>
+      <span><i class="fab fa-linux"></i> Linux</span>
+    </div>
+  </div>
+</section>
+
 
   <section id="contact" data-aos="fade-up">
     <h2>Contact Me</h2>
@@ -345,6 +563,40 @@
       document.body.classList.toggle("dark-mode");
     }
   </script>
+  <script>
+  function toggleAbout() {
+    const moreText = document.getElementById("more-about");
+    const toggleLink = document.getElementById("toggle-about");
+
+    if (moreText.style.display === "none") {
+      moreText.style.display = "block";
+      toggleLink.textContent = "Read less";
+    } else {
+      moreText.style.display = "none";
+      toggleLink.textContent = "Read more";
+    }
+  }
+</script>
+<script>
+  const swiper = new Swiper('.swiper-container', {
+    loop: true,
+    slidesPerView: 1,
+    spaceBetween: 20,
+    centeredSlides: true,
+    grabCursor: true,
+    pagination: { el: '.swiper-pagination', clickable: true },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    autoplay: {
+      delay: 4000,
+      disableOnInteraction: false,
+    },
+  });
+</script>
+
+
 
   <!-- Tawk.to Live Chat -->
   <script type="text/javascript">

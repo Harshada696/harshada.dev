@@ -289,16 +289,23 @@
     <a href="#contact">Contact</a>
   </nav>
 
-  <section id="about" data-aos="fade-up">
+<section id="about" data-aos="fade-up">
   <h2>About Me</h2>
   <p style="text-align: justify; font-size: 1.05rem;">
     I’m <strong>Harshada Mundwadkar</strong>, a passionate Computer Science student with a knack for building scalable full-stack applications and solving real-world problems using AI and cloud technologies. My development journey blends creativity with logic – whether I’m working with <strong>React, Node.js, or Firebase</strong>, or designing ML models in <strong>Python</strong>.
-    <br><br>
-    I've worked on a variety of hands-on projects ranging from <em>AI-powered apps</em> to <em>automated robotics</em>, reflecting a strong foundation in both software and embedded systems. I enjoy collaborating on open-source initiatives, diving deep into <strong>cloud platforms like AWS</strong>, and crafting elegant, responsive UI/UX experiences.
-    <br><br>
-    Beyond coding, I find joy in public speaking, mentoring peers, and staying updated with the latest tech trends. My goal is to blend technology with purpose — creating tools that empower people and communities.
   </p>
+
+  <div id="more-about" style="display: none;">
+    <p style="text-align: justify; font-size: 1.05rem;">
+      I've worked on a variety of hands-on projects ranging from <em>AI-powered apps</em> to <em>automated robotics</em>, reflecting a strong foundation in both software and embedded systems. I enjoy collaborating on open-source initiatives, diving deep into <strong>cloud platforms like AWS</strong>, and crafting elegant, responsive UI/UX experiences.
+      <br><br>
+      Beyond coding, I find joy in public speaking, mentoring peers, and staying updated with the latest tech trends. My goal is to blend technology with purpose — creating tools that empower people and communities.
+    </p>
+  </div>
+
+  <a id="toggle-about" onclick="toggleAbout()" style="color: #924d7e; cursor: pointer; font-weight: bold; display: inline-block; margin-top: 10px;">Read more</a>
 </section>
+
 
 
   <section id="projects" data-aos="fade-up">
@@ -366,6 +373,21 @@
       document.body.classList.toggle("dark-mode");
     }
   </script>
+  <script>
+  function toggleAbout() {
+    const moreText = document.getElementById("more-about");
+    const toggleLink = document.getElementById("toggle-about");
+
+    if (moreText.style.display === "none") {
+      moreText.style.display = "block";
+      toggleLink.textContent = "Read less";
+    } else {
+      moreText.style.display = "none";
+      toggleLink.textContent = "Read more";
+    }
+  }
+</script>
+
 
   <!-- Tawk.to Live Chat -->
   <script type="text/javascript">

@@ -48,7 +48,7 @@ header p {
 nav {
   display: flex;
   justify-content: center;
-  background-color: #333;
+  background: linear-gradient(135deg, #d172b1, #dc1f8a);
   padding: 15px 0;
   gap: 30px;
 }

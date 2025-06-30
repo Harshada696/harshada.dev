@@ -92,22 +92,7 @@
 <body>
   <h1>Contact Form Data</h1>
   <div id="messages"></div>
-  <div class="logout" onclick="logout()">Logout</div>
-  <script>
-    function login() {
-      const id = document.getElementById('adminId').value;
-      const password = document.getElementById('adminPassword').value;
-
-      const correctId = "admin";
-      const correctPassword = "harshada123";
-
-      if (id === correctId && password === correctPassword) {
-        localStorage.setItem("isAdmin", "true");
-        window.location.href = "admin.html";
-      } else {
-        document.getElementById("error").textContent = "Invalid ID or Password.";
-      }
-    }
-  </script>
+  <a href=index.html <div class="logout" onclick="logout()">Logout</div></a>
+  
 </body>
 </html>

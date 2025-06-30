@@ -250,6 +250,78 @@
       font-weight: bold;
       text-decoration: underline;
     }
+    .project-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 30px;
+  justify-items: center;
+  margin-top: 20px;
+}
+
+.project-card {
+  background: #fff;
+  color: #333;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  width: 100%;
+  max-width: 300px;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.15);
+}
+
+.project-icon {
+  font-size: 40px;
+  margin-bottom: 15px;
+  color: #a18cd1;
+  transition: color 0.3s, text-shadow 0.3s;
+}
+
+.project-card:hover .project-icon {
+  color: #924d7e;
+  text-shadow: 0 0 5px #a18cd1, 0 0 10px #a18cd1;
+}
+
+.skills-category {
+  margin-top: 30px;
+}
+
+.skills-category h3 {
+  margin-top: 30px;
+  font-size: 1.3rem;
+  color: #444;
+}
+
+.skills-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px;
+  margin-top: 10px;
+}
+
+.skills-grid span {
+  background: #fff;
+  padding: 10px 14px;
+  border-radius: 10px;
+  color: #333;
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.08);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.skills-grid span:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
   </style>
 </head>
 <body>
@@ -308,31 +380,92 @@
 
 
 
-  <section id="projects" data-aos="fade-up">
-    <h2>Projects</h2>
-    <ul>
-      <li><strong>YouTube AI Clone:</strong> React, Node.js, MongoDB, AI APIs</li>
-      <li><strong>SmartEducationHub:</strong> Node.js, MySQL, HTML/CSS/JS</li>
-      <li><strong>Travel Management System:</strong> Firebase, Java (Servlets)</li>
-      <li><strong>Fruit Disease Detection:</strong> Python, Flask, CNN</li>
-      <li><strong>Renuka Foods Website:</strong> PHP, MySQL</li>
-      <li><strong>Automatic Floor Cleaner Robot:</strong> Arduino</li>
-    </ul>
-  </section>
+ <!-- Projects Section -->
+<section id="projects" data-aos="fade-up">
+  <h2 style="text-align: center; margin-bottom: 40px;">Projects</h2>
+  <div class="project-grid">
 
-  <section id="skills" data-aos="fade-up">
-    <h2>Skills</h2>
-    <div class="skills-grid">
-      <span>HTML/CSS/JS</span>
-      <span>React & Node.js</span>
-      <span>Python, Java</span>
-      <span>SQL, MongoDB</span>
-      <span>Firebase, AWS</span>
-      <span>Docker, GitHub</span>
-      <span>Power BI, Figma</span>
-      <span>Data Science</span>
+    <div class="project-card" data-aos="zoom-in">
+      <i class="fab fa-youtube project-icon"></i>
+      <h3>YouTube AI Clone</h3>
+      <p>React, Node.js, MongoDB, AI APIs</p>
     </div>
-  </section>
+
+    <div class="project-card" data-aos="zoom-in" data-aos-delay="100">
+      <i class="fas fa-graduation-cap project-icon"></i>
+      <h3>SmartEducationHub</h3>
+      <p>Node.js, MySQL, HTML/CSS/JS</p>
+    </div>
+
+    <div class="project-card" data-aos="zoom-in" data-aos-delay="200">
+      <i class="fas fa-map-marked-alt project-icon"></i>
+      <h3>Travel Management System</h3>
+      <p>Firebase, Java (Servlets)</p>
+    </div>
+
+    <div class="project-card" data-aos="zoom-in" data-aos-delay="300">
+      <i class="fas fa-apple-alt project-icon"></i>
+      <h3>Fruit Disease Detection</h3>
+      <p>Python, Flask, CNN</p>
+    </div>
+
+    <div class="project-card" data-aos="zoom-in" data-aos-delay="400">
+      <i class="fas fa-globe project-icon"></i>
+      <h3>Renuka Foods Website</h3>
+      <p>PHP, MySQL</p>
+    </div>
+
+    <div class="project-card" data-aos="zoom-in" data-aos-delay="500">
+      <i class="fas fa-robot project-icon"></i>
+      <h3>Automatic Floor Cleaner Robot</h3>
+      <p>Arduino, Embedded Systems</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" data-aos="fade-up">
+  <h2 style="text-align: center;">Skills</h2>
+  <div class="skills-category">
+    <h3>Programming Languages</h3>
+    <div class="skills-grid">
+      <span><i class="fas fa-code"></i> C</span>
+      <span><i class="fab fa-python"></i> Python</span>
+      <span><i class="fab fa-r-project"></i> R</span>
+    </div>
+
+    <h3>Web & Tools</h3>
+    <div class="skills-grid">
+      <span><i class="fab fa-html5"></i> HTML</span>
+      <span><i class="fab fa-css3-alt"></i> CSS</span>
+      <span><i class="fab fa-js"></i> JavaScript</span>
+      <span><i class="fab fa-react"></i> React</span>
+      <span><i class="fab fa-node"></i> Node.js</span>
+      <span><i class="fas fa-fire"></i> Firebase</span>
+      <span><i class="fab fa-git-alt"></i> Git</span>
+      <span><i class="fab fa-github"></i> GitHub</span>
+      <span><i class="fas fa-database"></i> SQL/MongoDB</span>
+      <span><i class="fab fa-docker"></i> Docker</span>
+    </div>
+
+    <h3>AI & Data</h3>
+    <div class="skills-grid">
+      <span><i class="fas fa-brain"></i> Data Science</span>
+      <span><i class="fas fa-microchip"></i> AI</span>
+      <span><i class="fas fa-plug"></i> API Integration</span>
+      <span><i class="fas fa-vial"></i> Flask</span>
+    </div>
+
+    <h3>Operating Systems</h3>
+    <div class="skills-grid">
+      <span><i class="fab fa-apple"></i> macOS</span>
+      <span><i class="fab fa-windows"></i> Windows</span>
+      <span><i class="fab fa-linux"></i> Linux</span>
+    </div>
+  </div>
+</section>
+
 
   <section id="contact" data-aos="fade-up">
     <h2>Contact Me</h2>

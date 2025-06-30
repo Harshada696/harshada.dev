@@ -1,42 +1,66 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Harshada Portfolio</title>
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Harshada Mundwadkar | Portfolio</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <header>
-    <h1>Harshada</h1>
-    <p>Web Developer | Designer | Student</p>
+  <header class="hero">
+    <div class="container">
+      <img src="3bbb22ed-2be6-4fe4-93c1-a3c0bbdadcdc.jpg" alt="Harshada" class="profile-img">
+      <h1>Harshada Mundwadkar</h1>
+      <p>Full Stack Developer | ML Enthusiast | Firebase & Cloud Practitioner</p>
+    </div>
   </header>
+
+  <nav>
+    <a href="#about">About</a>
+    <a href="#projects">Projects</a>
+    <a href="#skills">Skills</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
   <section id="about">
     <h2>About Me</h2>
-    <p>Hello! I’m Harshada, passionate about building web applications and learning new technologies.</p>
+    <p>Computer Science student with hands-on experience in full-stack development, machine learning, and cloud. I love building efficient solutions and collaborating with like-minded people.</p>
   </section>
 
   <section id="projects">
     <h2>Projects</h2>
     <ul>
-      <li>💼 Portfolio Website</li>
-      <li>📦 Firebase Contact Form</li>
+      <li><strong>YouTube AI Clone:</strong> React, Node.js, MongoDB, AI APIs</li>
+      <li><strong>SmartEducationHub:</strong> Node.js, MySQL, HTML/CSS/JS</li>
+      <li><strong>Travel Management System:</strong> Firebase, Java (Servlets)</li>
+      <li><strong>Fruit Disease Detection:</strong> Python, Flask, CNN</li>
+      <li><strong>Renuka Foods Website:</strong> PHP, MySQL</li>
+      <li><strong>Automatic Floor Cleaner Robot:</strong> Arduino</li>
     </ul>
+  </section>
+
+  <section id="skills">
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <span>HTML/CSS/JS</span>
+      <span>React & Node.js</span>
+      <span>Python, Java</span>
+      <span>SQL, MongoDB</span>
+      <span>Firebase, AWS</span>
+      <span>Docker, GitHub</span>
+      <span>Power BI, Figma</span>
+    </div>
   </section>
 
   <section id="contact">
     <h2>Contact Me</h2>
-    <form id="contactForm">
-      <input type="text" id="name" placeholder="Your Name" required />
-      <input type="email" id="email" placeholder="Your Email" required />
-      <textarea id="message" placeholder="Your Message" required></textarea>
-      <button type="submit">Send</button>
-    </form>
-    <p id="response"></p>
+    <p>Email: harshadamundwadkar@gmail.com</p>
+    <p>GitHub: <a href="https://github.com/Harshada696" target="_blank">github.com/Harshada696</a></p>
   </section>
 
-  <script src="firebase.js" type="module"></script>
-  <script src="script.js" type="module"></script>
+  <footer>
+    <p>Built with ❤️ by Harshada Mundwadkar</p>
+  </footer>
 </body>
 </html>

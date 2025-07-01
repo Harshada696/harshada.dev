@@ -664,26 +664,26 @@ footer {
 
 <script>
   async function getAnswer() {
-    const question = document.getElementById("user-question").value;
-    const responseDiv = document.getElementById("ai-response");
+  const question = document.getElementById("user-question").value;
+  const responseDiv = document.getElementById("ai-response");
 
-    responseDiv.innerText = "Thinking...";
+  responseDiv.innerText = "Thinking...";
 
-    try {
-      const res = await fetch("/api/ask", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ question }),
-      });
+  try {
+    const response = await fetch("/api/ask", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ question }),
+    });
 
-      const data = await res.json();
-      responseDiv.innerText = data.answer || "No answer received.";
-    } catch (err) {
-      responseDiv.innerText = "Error getting response.";
-    }
+    const data = await response.json();
+    responseDiv.innerText = data.answer || "No response.";
+  } catch (error) {
+    console.error("Error:", error);
+    responseDiv.innerText = "Error getting response.";
   }
+}
+
 </script>
 
 

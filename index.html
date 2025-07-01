@@ -665,27 +665,31 @@ footer {
 <script>
   async function getAnswer() {
     const question = document.getElementById("user-question").value;
-    const responseBox = document.getElementById("ai-response");
+    const responseDiv = document.getElementById("ai-response");
 
     try {
       const res = await fetch("/api/ask", {
         method: "POST",
-        headers: { "Content-Type": "application/json" },
+        headers: {
+          "Content-Type": "application/json",
+        },
         body: JSON.stringify({ question }),
       });
 
       const data = await res.json();
 
       if (data.answer) {
-        responseBox.innerText = data.answer;
+        responseDiv.innerText = data.answer;
       } else {
-        responseBox.innerText = "❌ No answer received.";
+        responseDiv.innerText = "❌ No answer received.";
       }
     } catch (err) {
-      responseBox.innerText = "❌ Error getting response.";
+      console.error(err);
+      responseDiv.innerText = "❌ Error getting response.";
     }
   }
 </script>
+
 
 
 

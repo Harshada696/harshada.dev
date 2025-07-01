@@ -1,11 +1,3 @@
-// api/ask.js
-
-const OpenAI = require("openai");
-
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
-
 module.exports = async (req, res) => {
   if (req.method !== "POST") {
     return res.status(405).json({ error: "Method not allowed" });
@@ -13,16 +5,7 @@ module.exports = async (req, res) => {
 
   const { question } = req.body;
 
-  try {
-    const completion = await openai.chat.completions.create({
-      model: "gpt-4",
-      messages: [{ role: "user", content: question }],
-    });
-
-    const answer = completion.choices[0].message.content;
-    res.status(200).json({ answer });
-  } catch (error) {
-    console.error("API Error:", error);
-    res.status(500).json({ error: "Error getting response" });
-  }
+  return res.status(200).json({
+    answer: `✅ API route working! You asked: "${question}"`,
+  });
 };

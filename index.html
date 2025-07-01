@@ -617,12 +617,7 @@ footer {
     </div>
   </div>
 </section>
-<section id="ask-ai" data-aos="fade-up">
-  <h2 style="text-align:center;">Ask HarshiBot 🤖</h2>
-  <textarea id="user-question" rows="4" placeholder="Ask me anything..."></textarea>
-  <button onclick="getAnswer()">Ask</button>
-  <div id="ai-response" style="margin-top:20px; font-weight:bold;"></div>
-</section>
+
 
 
 
@@ -655,40 +650,8 @@ footer {
   <footer>
     <p>Built with ❤️ by Harshada Mundwadkar</p>
   </footer>
- <section id="ask-ai">
-  <h2>Ask HarshiBot 🤖</h2>
-  <textarea id="user-question" rows="4" placeholder="Ask me anything..."></textarea>
-  <button onclick="getAnswer()">Ask</button>
-  <div id="ai-response"></div>
-</section>
 
-<script>
-  async function getAnswer() {
-    const question = document.getElementById("user-question").value;
-    const responseDiv = document.getElementById("ai-response");
 
-    try {
-      const res = await fetch("/api/ask", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ question }),
-      });
-
-      const data = await res.json();
-
-      if (data.answer) {
-        responseDiv.innerText = data.answer;
-      } else {
-        responseDiv.innerText = "❌ No answer received.";
-      }
-    } catch (err) {
-      console.error(err);
-      responseDiv.innerText = "❌ Error getting response.";
-    }
-  }
-</script>
 
 
 

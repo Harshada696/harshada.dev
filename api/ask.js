@@ -1,30 +1,22 @@
-import OpenAI from "openai";
+// ask.js
+import OpenAI from 'openai';
 
 const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
+  apiKey: process.env.OPENAI_API_KEY, // Make sure this env var is set
 });
 
 export default async function handler(req, res) {
-  if (req.method !== "POST") {
-    return res.status(405).json({ error: "Method not allowed" });
-  }
-
-  const { question } = req.body;
-
-  console.log("🔵 Received question:", question);
-  console.log("🔵 API Key loaded:", !!process.env.OPENAI_API_KEY); // true/false
+  const { prompt } = req.body;
 
   try {
-    const completion = await openai.chat.completions.create({
+    const response = await openai.chat.completions.create({
       model: "gpt-4",
-      messages: [{ role: "user", content: question }],
+      messages: [{ role: "user", content: prompt }],
     });
 
-    console.log("🟢 OpenAI response:", completion.choices[0].message.content);
-
-    res.status(200).json({ answer: completion.choices[0].message.content });
+    res.status(200).json({ response: response.choices[0].message.content });
   } catch (error) {
-    console.error("🔴 OpenAI Error:", error);
-    res.status(500).json({ error: "Error getting answer from OpenAI" });
+    console.error("OpenAI error:", error);
+    res.status(500).json({ error: error.message });
   }
 }

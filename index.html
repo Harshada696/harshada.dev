@@ -20,6 +20,11 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
 <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<script src="...swiper-bundle.min.js" defer></script>
+<script src="...aos.js" defer></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
 <!-- AOS Library -->
 <link href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css" rel="stylesheet" />
@@ -612,9 +617,16 @@ footer {
     </div>
   </div>
 </section>
+<section id="ask-ai" data-aos="fade-up">
+  <h2 style="text-align:center;">Ask HarshiBot 🤖</h2>
+  <textarea id="user-question" rows="4" placeholder="Ask me anything..."></textarea>
+  <button onclick="getAnswer()">Ask</button>
+  <div id="ai-response" style="margin-top:20px; font-weight:bold;"></div>
+</section>
 
 
-  <section id="contact" data-aos="fade-up">
+
+<section id="contact" data-aos="fade-up">
   <h2 style="text-align:center; font-size:2.2rem; margin-bottom: 30px;">Let's Connect ✨</h2>
   
   <form id="contactForm" class="contact-form">
@@ -623,6 +635,11 @@ footer {
     <textarea id="message" placeholder="Your Message" required></textarea>
     <button type="submit">Send Message 🚀</button>
   </form>
+
+  <!-- ✅ Add this below the form -->
+  <div id="response" style="text-align:center; margin-top:10px; font-weight:bold; color: white;"></div>
+</section>
+
   
   <p id="response" style="text-align:center; font-weight:bold; margin-top: 15px;"></p>
 <center><a href="Harshada_Resume_Latest.pdf" 
@@ -638,6 +655,38 @@ footer {
   <footer>
     <p>Built with ❤️ by Harshada Mundwadkar</p>
   </footer>
+ <section id="ask-ai">
+  <h2 style="text-align:center;">Ask HarshiBot 🤖</h2>
+  <textarea id="user-question" rows="4" placeholder="Ask me anything..."></textarea>
+  <button onclick="getAnswer()">Ask</button>
+  <div id="ai-response" style="margin-top:20px; font-weight:bold;"></div>
+</section>
+
+<script>
+  async function getAnswer() {
+    const question = document.getElementById("user-question").value;
+    const responseDiv = document.getElementById("ai-response");
+
+    responseDiv.innerText = "Thinking...";
+
+    try {
+      const res = await fetch("/api/ask", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ question }),
+      });
+
+      const data = await res.json();
+      responseDiv.innerText = data.answer || "No answer received.";
+    } catch (err) {
+      responseDiv.innerText = "Error getting response.";
+    }
+  }
+</script>
+
+
 
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <script>
@@ -748,6 +797,8 @@ footer {
     })();
   </script>
   <!--End of Tawk.to Script-->
+  <script type="module" src="script.js"></script>
+
 </body>
 </html>
 

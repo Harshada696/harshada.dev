@@ -10,8 +10,6 @@ module.exports = async (req, res) => {
   }
 
   const { question } = req.body;
-  console.log("📩 Received question:", question);
-  console.log("🔑 Using key:", process.env.OPENAI_API_KEY?.slice(0, 5) + "...");
 
   try {
     const completion = await openai.chat.completions.create({
@@ -20,10 +18,9 @@ module.exports = async (req, res) => {
     });
 
     const answer = completion.choices[0].message.content.trim();
-    console.log("✅ AI response:", answer);
     res.status(200).json({ answer });
   } catch (error) {
-    console.error("❌ OpenAI API Error:", error.message);
-    res.status(500).json({ error: "Failed to fetch response from OpenAI." });
+    console.error("❌ Error from OpenAI:", error.message);
+    res.status(500).json({ error: "Error getting response from OpenAI." });
   }
 };

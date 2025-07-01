@@ -656,34 +656,35 @@ footer {
     <p>Built with ❤️ by Harshada Mundwadkar</p>
   </footer>
  <section id="ask-ai">
-  <h2 style="text-align:center;">Ask HarshiBot 🤖</h2>
+  <h2>Ask HarshiBot 🤖</h2>
   <textarea id="user-question" rows="4" placeholder="Ask me anything..."></textarea>
   <button onclick="getAnswer()">Ask</button>
-  <div id="ai-response" style="margin-top:20px; font-weight:bold;"></div>
+  <div id="ai-response"></div>
 </section>
 
 <script>
   async function getAnswer() {
-  const question = document.getElementById("user-question").value;
-  const responseDiv = document.getElementById("ai-response");
+    const question = document.getElementById("user-question").value;
+    const responseBox = document.getElementById("ai-response");
 
-  responseDiv.innerText = "Thinking...";
+    try {
+      const res = await fetch("/api/ask", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ question }),
+      });
 
-  try {
-    const response = await fetch("/api/ask", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({ question }),
-    });
+      const data = await res.json();
 
-    const data = await response.json();
-    responseDiv.innerText = data.answer || "No response.";
-  } catch (error) {
-    console.error("Error:", error);
-    responseDiv.innerText = "Error getting response.";
+      if (data.answer) {
+        responseBox.innerText = data.answer;
+      } else {
+        responseBox.innerText = "❌ No answer received.";
+      }
+    } catch (err) {
+      responseBox.innerText = "❌ Error getting response.";
+    }
   }
-}
-
 </script>
 
 

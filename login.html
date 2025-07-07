@@ -13,7 +13,7 @@
     body {
       margin: 0;
       font-family: 'Poppins', sans-serif;
-      background: linear-gradient(135deg, #a18cd1, #fbc2eb);
+      background: linear-gradient(135deg, #a18cd1, #fbc2c6);
       height: 100vh;
       display: flex;
       justify-content: center;
@@ -78,7 +78,7 @@
     }
 
     button:hover {
-      box-shadow: 0 0 20px #a18cd1;
+      box-shadow: green;
       transform: scale(1.02);
     }
 
@@ -104,21 +104,29 @@
     <p id="error"></p>
   </div>
 
-  <script>
-    function login() {
-      const id = document.getElementById('adminId').value;
-      const password = document.getElementById('adminPassword').value;
+ <script>
+  function login() {
+    const id = document.getElementById('adminId').value;
+    const password = document.getElementById('adminPassword').value;
+    const button = document.querySelector("button");
 
-      const correctId = "admin";
-      const correctPassword = "harshada123";
+    const correctId = "admin";
+    const correctPassword = "harshada123";
 
-      if (id === correctId && password === correctPassword) {
+    if (id === correctId && password === correctPassword) {
+      button.style.background = "linear-gradient(to right, #00c851, #007e33)"; 
+      button.textContent = "Logging in...";
+      setTimeout(() => {
         localStorage.setItem("isAdmin", "true");
         window.location.href = "admin.html";
-      } else {
-        document.getElementById("error").textContent = "Invalid ID or Password.";
-      }
+      }, 800); 
+    } else {
+      document.getElementById("error").textContent = "Invalid ID or Password.";
+     button.style.background = "linear-gradient(to right, #ed1221, #ed1221)"; 
+      
     }
-  </script>
+  }
+</script>
+
 </body>
 </html>
